@@ -20,8 +20,19 @@ public class UserController {
      * @param id 用户id
      * @return 用户
      */
-    @GetMapping("/{id}")
+    @GetMapping("query/{id}")
     public User queryById(@PathVariable("id") Long id) {
         return userService.queryById(id);
+    }
+
+    /**
+     * 路径： /user/110
+     *
+     * @param id 用户id
+     * @return 用户
+     */
+    @GetMapping("delete/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        userService.delete(id);
     }
 }
